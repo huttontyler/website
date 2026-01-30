@@ -1,0 +1,19 @@
+[
+  
+    {
+      "title"    : "Hello World",
+      "url"      : "/1970/01/01/hello-world.html",
+      "date"     : "January 01, 1970",
+      "lang"     : "en",
+      "excerpt"  : "Welcome to my blog."
+    } ,
+  
+    {
+      "title"    : "Hallo Welt",
+      "url"      : "/1970/01/01/hallo-welt.html",
+      "date"     : "January 01, 1970",
+      "lang"     : "de",
+      "excerpt"  : "Willkommen auf meinem Blog."
+    } 
+  
+]

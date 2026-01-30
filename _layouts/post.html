@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'de' }}">
+<head>
+{% include head.html %}
+</head>
+<body>
+
+  {% include navbar.html %}
+<main>
+  <header class="post-header">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10">
+        
+        <div class="post-meta-top mb-3">
+          {% if page.categories.size > 0 %}
+            <span class="badge">{{ page.categories | first }}</span>
+          {% endif %}
+          <span class="post-date academic-text">— {{ page.date | date: "%d.%m.%Y" }}</span>
+        </div>
+
+        <h1 class="display-font post-title mb-4">
+          {{ page.title }}
+        </h1>
+
+        {% if page.description %}
+          <p class="lead academic-text mb-5">
+            {{ page.description }}
+          </p>
+        {% endif %}
+
+        <hr class="post-divider">
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+        <div class="post-content">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+</main>
+{% include footer.html %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

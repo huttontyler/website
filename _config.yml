@@ -1,0 +1,18 @@
+title: Tyler Hutton
+languages: ["de-ch", "en-gb"]
+default_lang: "de-ch"
+
+exclude: ["README.md", "Gemfile", "Gemfile.lock"]
+
+bluesky_username: tylerhutton.ch
+youtube_channel: huttontyler
+linkedin_username: huttontyler
+github_username: huttontyler
+
+defaults:
+  - scope: { path: "de" }
+    values:
+      lang: "de-ch"
+  - scope: { path: "en" }
+    values:
+      lang: "en-gb"

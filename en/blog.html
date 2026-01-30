@@ -1,0 +1,119 @@
+---
+layout: default
+title: Blog
+permalink: /en/blog/
+lang: en
+---
+
+<div class="container py-5">
+  <div class="row mb-5">
+    <div class="col-lg-8">
+      <h1 class="mb-4 display-font hero-title" style="font-size: 3.5rem;">Blog archive</h1>
+      <p class="text-muted mb-4" style="font-size: 1.2rem;">Reflections, research and technical notes.</p>
+
+      <div class="input-group glass-input-group">
+        <select class="form-select lang-select-custom" id="lang-filter">
+          <option value="all">All languages</option>
+          <option value="en">English</option>
+          <option value="de">German</option>
+        </select>
+        <input type="text" class="form-control search-input-custom" id="search-input" placeholder="What takes your fancy?">
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="results-container"></div>
+
+  <div class="row g-4" id="default-list">
+    {% for post in site.posts %}
+    <div class="col-md-6 post-item" data-lang="{{ post.lang }}">
+      <a href="{{ post.url }}" class="text-decoration-none">
+        <div class="card h-100 blog-card">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge">{{ post.lang | upcase }}</span>
+              <span class="text-muted small">posted on {{ post.date | date: "%d.%m.%Y" }}</span>
+            </div>
+            <h2 class="h3 card-title display-font mb-3 text-white">{{ post.title }}</h2>
+            <p class="card-text academic-text text-muted"><i>{{ post.excerpt | strip_html | truncatewords: 25 }}</i></p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+
+<script>
+  var sjs = SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: `
+      <div class="col-md-6 mb-4 search-result" data-lang="{lang}">
+        <a href="{url}" class="text-decoration-none">
+          <div class="card h-100 blog-card">
+            <div class="card-body p-4">
+              <span class="badge mb-3">{lang}</span>
+              <h2 class="h3 card-title display-font mb-3 text-white">{title}</h2>
+              <p class="card-text academic-text text-muted">{excerpt}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    `,
+    noResultsText: '<div class="col-12 text-center text-muted">No results found</div>'
+  });
+
+  // 2. Logic for Dropdown Filtering
+  const langFilter = document.getElementById('lang-filter');
+  const searchInput = document.getElementById('search-input');
+  const defaultList = document.getElementById('default-list');
+  const resultsContainer = document.getElementById('results-container');
+
+  // Function to filter items based on language
+  function filterItems(containerClass) {
+    const selectedLang = langFilter.value;
+    const items = document.querySelectorAll(containerClass);
+
+    items.forEach(item => {
+      const itemLang = item.getAttribute('data-lang');
+      // If 'all' is selected, show everything. Otherwise, match language.
+      if (selectedLang === 'all' || itemLang === selectedLang) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // Event Listener: When Dropdown Changes
+  langFilter.addEventListener('change', function() {
+    if (searchInput.value.trim() !== '') {
+      // If user is searching, filter the search results
+      filterItems('.search-result');
+    } else {
+      // If search is empty, filter the default list
+      filterItems('.post-item');
+    }
+  });
+
+  // Event Listener: Watch for Search Results appearing
+  // (SimpleJekyllSearch rewrites the DOM, so we need to re-apply the filter immediately)
+  const observer = new MutationObserver(function(mutations) {
+    filterItems('.search-result');
+    
+    // Toggle visibility of default list
+    if (resultsContainer.innerHTML.trim() !== '') {
+      defaultList.style.display = 'none';
+    } else if (searchInput.value.trim() === '') {
+      defaultList.style.display = 'flex';
+      filterItems('.post-item'); // Re-apply filter to default list when clearing search
+    }
+  });
+
+  observer.observe(resultsContainer, { childList: true, subtree: true });
+
+</script>
