@@ -52,7 +52,7 @@
 /* --- 2. GLOBAL STYLES & TYPOGRAPHY --- */
 body {
   font-family: var(--font-sans);
-  font-variation-settings: 'opsz' 14, "ss07" 1; 
+  font-variation-settings: 'opsz' 14; 
   font-weight: 400;
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -71,7 +71,7 @@ main, .flex-grow-wrapper{
 h1, h2, h3, h4, h5, h6, .display-font {
   font-family: var(--font-sans);
   font-weight: 800;
-  font-variation-settings: 'opsz' 32, "ss07" 1 !important; 
+  font-variation-settings: 'opsz' 32 !important; 
   letter-spacing: -0.03em;
 }
 
@@ -139,7 +139,7 @@ a:not(.btn):not(.nav-link):not(.navbar-brand):not(.lang-btn-mobile):not(.nav-soc
 
 .nav-link {
   font-family: var(--font-sans);
-  font-variation-settings: "opsz" 14, "ss07" 1; 
+  font-variation-settings: "opsz" 14; 
   font-size: 1rem !important; 
   font-weight: 500;
   color: var(--text-color) !important;
@@ -491,7 +491,7 @@ a:not(.btn):not(.nav-link):not(.navbar-brand):not(.lang-btn-mobile):not(.nav-soc
 
 .hero-title {
   font-size: clamp(2.5rem, 8vw, 4rem);
-  font-variation-settings: "opsz" 32, "ss07" 1;
+  font-variation-settings: "opsz" 32;
   letter-spacing: -0.04em;
   line-height: 1.1;
   color: #ffffff;
@@ -508,7 +508,7 @@ a:not(.btn):not(.nav-link):not(.navbar-brand):not(.lang-btn-mobile):not(.nav-soc
   color: var(--bg-color) !important;
   border: 1px solid #ffffff;
   font-weight: 600;
-  font-variation-settings: "opsz" 14, "ss07" 1;
+  font-variation-settings: "opsz" 14;
 }
 
 .btn-primary:hover {
@@ -522,7 +522,7 @@ a:not(.btn):not(.nav-link):not(.navbar-brand):not(.lang-btn-mobile):not(.nav-soc
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #ffffff !important;
   font-weight: 600;
-  font-variation-settings: "opsz" 14, "ss07" 1;
+  font-variation-settings: "opsz" 14;
 }
 
 .btn-outline:hover {
