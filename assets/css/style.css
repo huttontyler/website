@@ -346,12 +346,6 @@ a:not(.btn):not(.nav-link):not(.navbar-brand):not(.lang-btn-mobile):not(.nav-soc
   border-radius: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .btn-outline-dark { color: #fff; border-color: #fff; }
-  .btn-outline-dark:hover { background-color: #fff; color: #000; }
-  .btn-close, .navbar-toggler-icon { filter: invert(1); }
-}
-
 /* --- INTEGRATED MAP OVERLAY --- */
 
 .moving-map {
