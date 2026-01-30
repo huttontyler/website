@@ -256,7 +256,7 @@ a:not(.btn):not(.nav-link):not(.navbar-brand):not(.lang-btn-mobile):not(.nav-soc
 
   .lang-btn-mobile:hover {
     background: var(--text-color);
-    color: var(--bg-color);
+    color: var(--bg-color) !important;
   }
 }
 
