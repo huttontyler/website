@@ -1,6 +1,9 @@
 title: Tyler Hutton
 languages: ["de-ch", "en-gb"]
 default_lang: "de-ch"
+baseurl: "tylerhutton.ch" 
+url: "https://huttontyler.github.io"
+theme: jekyll-theme-primer # Or whatever theme/setup you are using
 
 exclude: ["README.md", "Gemfile", "Gemfile.lock"]
 
