@@ -33,8 +33,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Ruby uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4 with: ruby-version: '3.2' bundler-cache: false
-      - name: Disable Bundler frozen (temporary) run: bundle config set --local frozen false
+      - name: Setup Ruby 
+        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4 
+          with: ruby-version: '3.2' bundler-cache: false
+      - name: Disable Bundler frozen (temporary) 
+        run: bundle config set --local frozen false
       - name: Install gems run: bundle install --jobs 4 --retry 3
 
       - name: Setup Pages
