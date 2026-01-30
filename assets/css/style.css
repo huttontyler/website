@@ -32,7 +32,7 @@
 
 /* --- 1. VARIABLE DEFINITIONS & THEMES --- */
 :root {
-  --font-sans: 'Inter Display', sans-serif;
+  --font-sans: 'Inter Display', 'Inter', sans-serif;
   --font-serif: 'Computer', serif;
 
 --bg-color: #0b0b0b;
