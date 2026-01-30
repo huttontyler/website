@@ -1,10 +1,9 @@
 title: Tyler Hutton
+repository: huttontyler/website  # <--- ADD THIS LINE
 languages: ["de-ch", "en-gb"]
 default_lang: "de-ch"
-
 baseurl: "" 
 url: "https://tylerhutton.ch" 
-
 theme: jekyll-theme-primer
 
 exclude: ["README.md", "Gemfile", "Gemfile.lock", "node_modules", "vendor"]
